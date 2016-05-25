@@ -18,6 +18,8 @@ public class HelloWorldService {
 
     @GET
     public Response helloWorld() {
-        return Response.status(Response.Status.OK).entity("Hello World").build();
+        JSONObject obj = new JSONObject();
+        obj.put("hello", "world");
+        return Response.status(Response.Status.OK).entity(obj.toString()).build();
     }
 }
